@@ -1,3 +1,3 @@
 # Symfony
 
-git push -u ticket master
+git clone https://github.com/holy-hub/Symfony.git Ticket
