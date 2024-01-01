@@ -11,6 +11,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 #[ORM\Entity(repositoryClass: TicketRepository::class)]
+#[UniqueEntity(fields: ['username'], message: 'This name is already past')]
 #[UniqueEntity(fields: ['dateDeCreation'], message: 'This time is already past')]
 class Ticket
 {

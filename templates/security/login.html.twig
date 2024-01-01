@@ -5,6 +5,7 @@
     {% endblock stylesheets %}
 
     {% block body %}
+        <a href="{{ path('app_landing') }}" class="btn btn-info text-warning nav-link m-3 p-2 text-center">Page d'accueil</a>
         <form method="post">
             {% if error %}
                 <div id="alert" class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -12,7 +13,7 @@
             
             {% if app.user %}
                 <div class="mb-3">
-                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                    You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }} " class="btn btn-danger">Logout</a>
                 </div>
             {% endif %}
             <body class="bg-primary">
@@ -59,9 +60,9 @@
                                 <div class="d-flex align-items-center justify-content-between small">
                                     <div class="text-muted">Copyright &copy; TICKETING 2023</div>
                                     <div>
-                                        <a href="#">Privacy Policy</a>
+                                        <a href=" {{ path('privacy') }} ">Privacy Policy</a>
                                         &middot;
-                                        <a href="#">Terms &amp; Conditions</a>
+                                        <a href=" {{ path('conditionEtTerme') }} ">Terms &amp; Conditions</a>
                                         &middot;
                                         <a href="{{ path('app_register_admin')}}">Need Admin account</a>
                                     </div>

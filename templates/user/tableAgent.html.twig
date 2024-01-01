@@ -1,3 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}{% endblock %}
+{% block body %}
+<div id="layoutSidenav_content">
+    <main>
+        <h1 class='text-center m-1 p-1'>Table Agent</h1>
+        <div class="container-fluid px-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <table id="datatablesSimple" class='table text-center'>
+                        <thead>
+                            <tr>
+                                {# <th>Id</th> #}
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>CodeAgent</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                {# <th>Id</th> #}
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>CodeAgent</th>
+                                <th>actions</th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {% for agent in agents %}
+                                <tr>
+                                    <td> {{ agent.username}} </td>
+                                    <td> {{ agent.email}} </td>
+                                    <td> {{ agent.codeAgent}} </td>
+                                    <td class='d-flex gap-5 justify-content-center'>
+                                        <a class='btn btn-primary' href="{{ path('app_user_show', {'id': agent.id}) }}">Show</a>
+                                        <a class='btn btn-dark' href="{{ path('app_user_edit', {'id': agent.id}) }}">Edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan='4'>
+                                        <center><p style='color:red'>Aucun Agent enregistré !</p></center>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div><hr>
+                <a class='d-block mx-auto w-100 btn btn-primary' href='{{ path('app_user_admin_index')}}'>Retour</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+{% endblock %}

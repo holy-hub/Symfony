@@ -37,7 +37,12 @@
                         <div class="sb-sidenav-menu-heading">Addons</div>
                         <a class="nav-link" href="{{ path('app_ticket_index') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Tables
+                            Tables Tickets
+                        </a>
+                        <div class="sb-sidenav-menu-heading">Personnel</div>
+                        <a class="nav-link" href="{{ path('app_user_show', {'id': user.id}) }}">
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                            Mes informations
                         </a>
                     </div>
                 </div>
@@ -60,7 +65,7 @@
                             <div class="card bg-primary text-white mb-4">
                                 <div class="card-body">Info Agent</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="{{ path('app_user_show', {'id': 'user.id'}) }}">View Details</a>
+                                    <a class="small text-white stretched-link" href="{{ path('app_user_show', {'id': user.id}) }}">View Details</a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -114,9 +119,9 @@
                     <div class="d-flex align-items-center justify-content-between small">
                         <div class="text-muted">Copyright &copy; TICKETING 2023</div>
                         <div>
-                            <a href="#">Privacy Policy</a>
+                            <a href=" {{ path('privacy') }} ">Privacy Policy</a>
                             &middot;
-                            <a href="#">Terms &amp; Conditions</a>
+                            <a href=" {{ path('conditionEtTerme') }} ">Terms &amp; Conditions</a>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-7">
                                 <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Create new Tickets Account</h3></div>
+                                <div class="card-header"><h3 class="text-center font-weight-light my-4">Create new Tickets</h3></div>
                                     <div class="card-body">
                                         <div class="row mb-3">
                                             {{ include('ticket/_form.html.twig') }}
@@ -33,9 +33,9 @@
                         <div class="d-flex align-items-center justify-content-between small">
                             <div class="text-muted">Copyright &copy; TICKETING 2023</div>
                             <div>
-                                <a href="#">Privacy Policy</a>
+                                <a href=" {{ path('privacy') }} ">Privacy Policy</a>
                                 &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                                <a href=" {{ path('conditionEtTerme') }} ">Terms &amp; Conditions</a>
                             </div>
                         </div>
                     </div>

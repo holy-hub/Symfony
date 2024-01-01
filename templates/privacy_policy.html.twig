@@ -1,0 +1,43 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mt-4">Politique de confidentialité</h1>
+    <p>Dernière mise à jour : [Date]</p>
+
+    <h2>Informations collectées</h2>
+    <p>Nous collectons les informations suivantes :</p>
+    <ul>
+        <li>Données personnelles telles que le nom, l'adresse e-mail, etc.</li>
+        <li>Données de contact et d'identification</li>
+        <li>Informations sur les préférences et les intérêts</li>
+    </ul>
+
+    <h2>Utilisation des informations</h2>
+    <p>Nous utilisons les informations collectées pour :</p>
+    <ul>
+        <li>Fournir nos services et gérer les comptes utilisateurs</li>
+        <li>Personnaliser l'expérience utilisateur</li>
+        <li>Améliorer nos produits et services</li>
+    </ul>
+
+    <h2>Divulgation à des tiers</h2>
+    <p>Nous ne divulguons pas vos informations personnelles à des tiers sans votre consentement explicite, sauf dans les cas suivants :</p>
+    <ul>
+        <li>Lorsque cela est nécessaire pour fournir les services demandés</li>
+        <li>En cas d'obligation légale ou de demande d'une autorité compétente</li>
+    </ul>
+
+    <h2>Sécurité</h2>
+    <p>Nous prenons des mesures de sécurité pour protéger vos informations personnelles contre tout accès non autorisé, perte ou divulgation.</p>
+
+    <h2>Nous contacter</h2>
+    <p>Si vous avez des questions ou des suggestions concernant notre politique de confidentialité, veuillez nous contacter à l'adresse suivante : [email protected]</p>
+</div>
+
+<a href="{{ path('retour') }}" class="btn btn-primary d-flex justify-content-center mt-3">Retour</a>
+
+{% endblock body %}

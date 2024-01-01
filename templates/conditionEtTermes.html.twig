@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ title }}{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <h1 class="mt-4">Conditions et termes</h1>
+
+    <h2>Acceptation des conditions</h2>
+    <p>En utilisant cette application, vous acceptez les conditions et termes suivants :</p>
+    <ul>
+        <li>Vous êtes responsable de la confidentialité de vos informations d'identification.</li>
+        <li>Vous ne devez pas utiliser cette application à des fins illégales ou non autorisées.</li>
+        <li>Toute violation de ces conditions peut entraîner la résiliation de votre compte.</li>
+    </ul>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>Tous les contenus présents dans cette application sont protégés par des droits de propriété intellectuelle.</p>
+    <ul>
+        <li>Vous ne pouvez pas copier, reproduire ou distribuer ces contenus sans autorisation.</li>
+        <li>Toute utilisation non autorisée peut entraîner des poursuites judiciaires.</li>
+    </ul>
+
+    <h2>Limitation de responsabilité</h2>
+    <p>Nous ne pouvons pas garantir l'exactitude, l'exhaustivité ou la fiabilité des informations présentes dans cette application.</p>
+    <ul>
+        <li>Nous ne sommes pas responsables des dommages directs, indirects ou consécutifs résultant de l'utilisation de cette application.</li>
+        <li>Nous nous réservons le droit de modifier, suspendre ou interrompre cette application à tout moment.</li>
+    </ul>
+
+    <h2>Modification des conditions</h2>
+    <p>Nous nous réservons le droit de modifier ces conditions à tout moment sans préavis.</p>
+    <ul>
+        <li>Il est de votre responsabilité de consulter régulièrement les conditions mises à jour.</li>
+        <li>En continuant à utiliser cette application, vous acceptez les conditions modifiées.</li>
+    </ul>
+
+    <h2>Nous contacter</h2>
+    <p>Si vous avez des questions ou des préoccupations concernant les conditions et termes, veuillez nous contacter à l'adresse suivante : [email protected]</p>
+</div>
+\
+<a href="{{ path('retour') }}" class="btn btn-primary d-flex justify-content-center mt-3">Retour</a>
+
+{% endblock body %}

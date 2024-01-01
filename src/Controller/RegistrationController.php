@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/register')]
+#[Route('/user/register')]
 class RegistrationController extends AbstractController
 {
     #[Route('/admin', name: 'app_register_admin')]
@@ -42,11 +42,11 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
         ]);
     }
+
     #[Route('/agent', name: 'app_register_agent')]
     public function register_agent(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
         $user = new User();
-        $user->setCodeAgent('New account');
         $form = $this->createForm(RegistrationFormType::class, $user);
         $form->handleRequest($request);
 
@@ -60,9 +60,11 @@ class RegistrationController extends AbstractController
             );
 
             $admin = $this->getUser();
+            $adminId = $admin->getId();
+            $code = $user->getUsername() . ' Agent_TCK00' . $adminId . '0T';
             $user->setRoles(['ROLE_AGENT']);
             $user->setManager($admin);
-
+            $user->setCodeAgent($code);
 
             $entityManager->persist($user);
             $entityManager->flush();

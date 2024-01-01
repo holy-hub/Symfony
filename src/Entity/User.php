@@ -44,6 +44,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'manager', targetEntity: self::class)]
     private Collection $users;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Ticket")
+     * @ORM\JoinTable(name="user_tickets",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="ticket_id", referencedColumnName="id")}
+     *      )
+     */
     #[ORM\ManyToMany(targetEntity: Ticket::class, mappedBy: 'agent')]
     private Collection $tickets;
 
@@ -141,6 +148,16 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->username = $username;
 
         return $this;
+    }
+
+    /**
+    * Returns the string representation of the User object.
+    *
+    * @return string
+    */
+    public function __toString()
+    {
+        return $this->username; // Replace with the desired property to be used as a string representation
     }
 
     public function getCodeAgent(): ?string

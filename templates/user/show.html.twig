@@ -8,7 +8,7 @@
         <div id="layoutAuthentication_content">
             <main>
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row justify-content-center align-items-center">
                         <div class="col-lg-7">
                             <div class="card shadow-lg border-0 rounded-lg mt-5">
                                 <div class="card mb-4">
@@ -17,25 +17,24 @@
                                             <h1>{{ user.username}} </h1>
                                         </div>
                                         <div class="card-body">
-                                            <table id="datatablesSimple" class='table'>
+                                            <table id="datatablesSimple" class='table text-center'>
                                                 <tbody>
                                                     <tr>
                                                         <th>Username</th>
                                                         <th>Email</th>
-                                                        <th>Roles</th>
                                                     </tr>
                                                     <tr>
                                                         <td>{{ user.username }}</td>
                                                         <td>{{ user.email }}</td>
-                                                        <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
                                         </div>
-                                        <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="btnn btn-primary" href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                                        <div class="d-flex align-items-center justify-content-evenly mt-4 mb-0">
+                                            <a class="btn btn-light" href="{{ path('app_user_edit', {'id': user.id}) }}">Edit</a>
+                                            <a class="btn btn-primary" href="{{ path('retour') }}">Retour</a>
                                         </div>
-                                        <div class="d-flex align-items-center justify-content-center mt-4 mb-0">
+                                        <div class="d-flex align-items-center justify-content-center btn btn-dark mt-4 mb-0">
                                             {{ include('user/_delete_form.html.twig') }}
                                         </div>
                                     </div>
